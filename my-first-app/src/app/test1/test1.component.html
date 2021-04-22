@@ -1,0 +1,19 @@
+
+<div class="containe">
+    <div class="row">
+        <div class="col">
+            <p>test1 works!</p>
+            <button (click)="showSecretToggle = ! showSecretToggle">Display</button>
+            <p *ngIf="showSecretToggle">show secret</p>
+            <p></p>
+            <input type="text" [(ngModel)]="secret">
+            <button [hidden]="secrets.length === 0">Display details</button>
+            <div *ngFor="let secretItem of secrets; let i=index"
+                [ngStyle]="{backgroundColor: i > 4 ? 'blue' : 'red'}"
+                class="white-text"
+            >{{secretItem}}</div>
+            <button (click)="onBtnClick()">toggle</button>
+            <p>test1 end</p>
+        </div>
+    </div>
+</div>
