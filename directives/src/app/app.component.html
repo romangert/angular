@@ -9,19 +9,53 @@
       <ul class="list-group">
         <div *ngIf="onlyOdd">
           <li class="list-group-item"
-            *ngFor="let number of oddNumbers"
+            [ngClass]="{odd: odd % 2 !== 0}"
+            [ngStyle]="{'backgroundColor': odd % 2 ? 'yellow' : 'transparent'}"
+            *ngFor="let odd of oddNumbers"
           >
-            {{number}}
+            {{odd}}
           </li>
         </div>
-        <div *ngIf="!onlyOdd">
+        <!-- <div *ngIf="!onlyOdd">
           <li class="list-group-item"
-            *ngFor="let number of evenNumbers"
+          [ngClass]="{odd: even % 2 !== 0}"
+          [ngStyle]="{'backgroundColor': even % 2 ? 'yellow' : 'transparent'}"
+          *ngFor="let even of evenNumbers"
           >
-            {{number}}
+            {{even}}
+          </li>
+        </div>
+        <ng-template [ngIf]="!onlyOdd"]>
+          <div>
+            <li class="list-group-item"
+              [ngClass]="{odd: even % 2 !== 0}"
+              [ngStyle]="{'backgroundColor': even % 2 ? 'yellow' : 'transparent'}"
+              *ngFor="let even of evenNumbers"
+            >
+              {{even}}
+            </li>
+          </div>
+        </ng-template> -->
+        <div *appUnless="onlyOdd">
+          <li class="list-group-item"
+          [ngClass]="{odd: even % 2 !== 0}"
+          [ngStyle]="{'backgroundColor': even % 2 ? 'yellow' : 'transparent'}"
+          *ngFor="let even of evenNumbers"
+          >
+            {{even}}
           </li>
         </div>
       </ul>
+      <p appBasicHighLight>boker tov basic</p>
+      <p appBetterHighlight>boker tov bettre</p>
+      <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">boker tov bettrewwwwww</p>
+
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">value is 5</p>
+        <p *ngSwitchCase="10">value is 10</p>
+        <p *ngSwitchCase="100">value is 100</p>
+        <p *ngSwitchDefault>value is default</p>
+      </div>
     </div>
   </div>
 </div>
