@@ -1,3 +1,4 @@
+import { UserService } from './users.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +15,8 @@ import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { AccountService } from './account.service';
 import { LoggingService } from './logging.service';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,14 @@ import { LoggingService } from './logging.service';
     ShoppingEditComponent,
     DropdownDirective,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [AccountService, LoggingService],
+  providers: [AccountService, LoggingService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

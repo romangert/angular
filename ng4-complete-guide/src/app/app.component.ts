@@ -12,11 +12,12 @@ export class AppComponent implements OnInit{
   loadedFeature: string = 'recipe';
   accounts: { name: string; status: string; }[]=[];
 
+  constructor(private accountService: AccountService){}
+  
   onNavigate(feature: string){
     this.loadedFeature=feature;
   }
 
-  constructor(private accountService: AccountService){}
   ngOnInit(): void {
     this.accounts=this.accountService.accounts;
   }
