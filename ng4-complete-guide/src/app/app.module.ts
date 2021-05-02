@@ -1,3 +1,4 @@
+import { ShopingListService } from './shopping-list/shopping-list.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -32,7 +33,7 @@ import { LoggingService } from './logging.service';
   imports: [
     BrowserModule
   ],
-  providers: [AccountService, LoggingService],
+  providers: [ShopingListService, AccountService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
