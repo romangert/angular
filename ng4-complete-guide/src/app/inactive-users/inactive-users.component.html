@@ -1,0 +1,2 @@
+<p>inactive-users works!</p>
+<p *ngFor="let inactiveUser of inactiveUsers; let id=index">{{id}} - {{inactiveUser}} <button type="button" class="btn btn-success" (click)="activate(id)">activate</button></p>
