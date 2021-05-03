@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { UserService } from './users.service';
+=======
+import { ShopingListService } from './shopping-list/shopping-list.service';
+>>>>>>> 749b12f5e35510c5bc2ec944074289c265a5e9b0
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -37,7 +41,11 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
   imports: [
     BrowserModule
   ],
+<<<<<<< HEAD
   providers: [AccountService, LoggingService, UserService],
+=======
+  providers: [ShopingListService, AccountService, LoggingService],
+>>>>>>> 749b12f5e35510c5bc2ec944074289c265a5e9b0
   bootstrap: [AppComponent]
 })
 export class AppModule { }
