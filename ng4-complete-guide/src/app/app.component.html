@@ -1,38 +1,31 @@
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2" >
-      <app-new-account></app-new-account>
-      <hr>
-      <app-account
-        *ngFor="let acc of accounts; let i=index"
-        [account]="acc"
-        [id]="i"
-        ></app-account>
-    </div>
-  </div>
-</div> 
-<p>-------------------------------------------------------------------------</p>
-<<<<<<< HEAD
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2" >
-      <hr>
-      <app-active-users></app-active-users>
-      <app-inactive-users></app-inactive-users>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a routerLink="/">Home</a></li>
+                <li role="presentation" ><a routerLink="/servers">Servers</a></li>
+                <li role="presentation" ><a [routerLink]="['/users']">Users</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
-</div>
-<hr>
-<p>-------------------------------------------------------------------------</p>
-=======
--->
->>>>>>> 749b12f5e35510c5bc2ec944074289c265a5e9b0
-<app-header (featureSelected)='onNavigate($event)'></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <app-recipes *ngIf="loadedFeature==='recipe'"></app-recipes>
-      <app-shopping-list *ngIf="loadedFeature!='recipe'"></app-shopping-list>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <router-outlet></router-outlet>
+        </div>
     </div>
-  </div>
+    <!-- <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <app-home></app-home>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <app-users></app-users>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <app-servers></app-servers>
+        </div>
+    </div> -->
 </div>
